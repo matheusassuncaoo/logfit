@@ -1,0 +1,43 @@
+{
+  "name": "Python (Flask) & Node.js Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14.3",
+      "installTools": true
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "25"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "Dracula",
+        "files.autoSave": "afterDelay",
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.formatOnSave": true
+        },
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.fixAll.ruff": "explicit"
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "samuelcolvin.jinjahtml",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "dracula-theme.theme-dracula",
+        "redhat.vscode-yaml",
+        "eamodio.gitlens",
+        "humao.rest-client"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install --upgrade pip && pip install flask ruff && npm install -g npm@latest && echo '🚀 Ambiente Python e Node.js configurado e pronto para o código!'"
+}
